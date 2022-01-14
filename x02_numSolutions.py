@@ -12,7 +12,7 @@ Assignments:
 ##### x02. Determine the number of solutions
 Determine the number of solutions. You will need to make use of the discriminant.  If you have already completed x01, you can import that function and make use of it in this assignment
 """
-import x01_discriminant
+from x01_discriminant import discriminant
 
 def numSolutions(a,b,c):
   """
@@ -25,8 +25,14 @@ def numSolutions(a,b,c):
   return: 
   integer for number of solutions.  It should be 0, 1 or 2
   """
-  
-  return None
+  disc = discriminant(a,b,c)
+
+  if disc < 0:
+    return 0
+  elif disc == 0:
+    return 1
+  elif disc > 0:
+    return 2
 
 def main():
   # Uncomment the lines that make use of your function definition
